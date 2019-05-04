@@ -5,6 +5,20 @@
   <title>Future Value Application</title>
   <script>
   "use strict";
+
+  let returnNull = function(){
+    return null;
+  }
+  function calculateFutureValue(investment, rate, years){
+    document.write("this is in the function<br>"+(3.1415276987).toFixed(2)+"<br>");
+    futureValue = investment;
+    for (var i = 1; i <= years; i++ ) {
+      futureValue = futureValue + (futureValue * rate / 100);
+    }
+    futureValue = parseInt(futureValue);
+    return futureValue;
+  }
+
   let continueVar = true;
   let investment;
   let rate;
@@ -20,16 +34,12 @@
     years = parseInt(years);
 
     // calulate future value
-    futureValue = investment;
-    for (var i = 1; i <= years; i++ ) {
-      futureValue = futureValue + (futureValue * rate / 100);
-    }
-    futureValue = parseInt(futureValue);
+    futureValue = calculateFutureValue(investment, rate, years);
 
     //Write out the values
     document.write("Investment amount = " + investment);
     document.write(" Interest rate = " + rate);
-    document.write(" Years = " + years);
+    document.write("" + years);
     document.write(" Future Value is " + futureValue + "<br><br>");
 
     //Continue?
@@ -41,6 +51,8 @@
       continueVar = false;
     }
   }
+
+
   </script>
 </head>
 <body>
