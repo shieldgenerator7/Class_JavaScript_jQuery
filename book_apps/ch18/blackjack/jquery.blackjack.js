@@ -1,11 +1,11 @@
 (function($){
-    $.fn.blackjack = function(options) {  
+    $.fn.blackjack = function(options) {
         var o = $.extend({
             "dealerName": "Dealer",
             "playerName": "Player",
-            "bet": 5
+            "bet": 10
         }, options);
-        
+
         // preload card images
         for (var i in deck.cards) {
             var img = new Image();
@@ -15,17 +15,17 @@
         return this.each(function() {
             // add class used to format HTML elements
             $(this).addClass("blackjack");
-            
+
             // create and load HTML for plugin
             var html = "<label>" + o.dealerName + ":</label>";
             html = html + "<span>&nbsp;</span>";
             html = html + "<div id='dealer'>&nbsp;</div>";
-            
+
             html = html + "<label>" + o.playerName + ":</label>";
-            html = html + "<span>&nbsp;</span>"; 
+            html = html + "<span>&nbsp;</span>";
             html = html + "<div id='player'>&nbsp;</div>";
-            
-            html = html + "<input type='button' id='deal' value='Deal'>"; 
+
+            html = html + "<input type='button' id='deal' value='Deal'>";
             html = html + "<input type='button' id='hit' value='Hit'>";
             html = html + "<input type='button' id='stand' value='Stand'><br>";
             html = html + "<span>Bet: " + o.bet + "</span>";
@@ -45,7 +45,7 @@
             };
             var showCards = function(cardsArray, showHoleCard) {
                 var i = 0, html = "";
-                
+
                 if (showHoleCard === false) {
                     i = 1; // skip first card in cards array
                     html = "<img src='cards/back.png'>";
@@ -82,7 +82,7 @@
                 game.deal();
 
                 if ( game.dealer.hasBlackJack() || game.player.hasBlackJack() ) {
-                    showResults();            
+                    showResults();
                 } else {
                     $("#dealer").html( showCards(game.dealer.cards, false ) ); // don't show hole card
                     $("#player").html( showCards(game.player.cards ) );
@@ -116,7 +116,7 @@
                         clearInterval(timer);
                         showResults();
                     }
-                }, 
+                },
                 1000);
             });
 

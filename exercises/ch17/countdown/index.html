@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Countdown To...</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" href="countdown.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="countdown.js"></script>
 </head>
 <body>
@@ -12,9 +14,9 @@
         <label for="event">Event Name:</label>
         <input type="text" name="event" id="event"><br>
         <label for="date">Event Date:</label>
-        <input type="text" name="date" id="date"><br>
+        <input type="text" name="date" class="datepicker" placeholder="MM/DD/YYYY"><br>
         <input type="button" name="countdown" id="countdown" value="Countdown!">
         <p id="message">&nbsp;</p>
-    </main> 
+    </main>
 </body>
 </html>
